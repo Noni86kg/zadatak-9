@@ -23,8 +23,8 @@ const Details = ({filteredData, details, handleAddProduct, cartItems}) => {
             styleText='display-none'
         }
         const singleItem = filteredData.find((item) => item.id === +idFixed)
-        
         const {title, image, description, price, rating} = singleItem
+
         return (
             <section className="details-page">
                 <div className="details-image">
@@ -46,7 +46,7 @@ const Details = ({filteredData, details, handleAddProduct, cartItems}) => {
                 </div>
                 
                 <button className={styleBtn} onClick={()=> handleAddProduct(singleItem)}>ADD TO CART <span className="cart-icon"> <FaShoppingCart /> </span></button>
-                <div className={styleText}> <h3>product_name is already in your cart</h3> </div>
+                <div className={styleText}> <h3>{title} is already in your cart</h3> </div>
             </section>
         )
             

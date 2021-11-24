@@ -75,8 +75,7 @@ function App() {
       fetchData()
     }, [])
 
-    const ddlHandler = e => {
-
+    const ddlHandler = (e) => {
       if(e.value === "up") {
         data.sort((a, b) => {
           if (a.price > b.price) return 1
@@ -126,7 +125,7 @@ function App() {
       <>
         <Header cartItems={cartItems}/>
         <Routes >
-          <Route path="/" element= {<Products filterItems={filterItems} ddlHandler={ddlHandler} data={data} setData={setData} filteredData={filteredData} setFilteredData={setFilteredData} handleAddProduct={handleAddProduct} cartItems={cartItems} handleDetails={handleDetails} />}/>
+          <Route path="/" element= {<Products cartItems={cartItems} filterItems={filterItems} ddlHandler={ddlHandler} data={data} setData={setData} filteredData={filteredData} setFilteredData={setFilteredData} handleAddProduct={handleAddProduct} cartItems={cartItems} handleDetails={handleDetails} />}/>
           <Route path="/details/:id" element={<Details filteredData={filteredData} details={details} handleAddProduct={handleAddProduct} cartItems={cartItems}/>} />
           <Route path="/cart" element={<ShoppingCart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance} handleSingleCartClearance={handleSingleCartClearance}/>} />
           <Route path="*" element={<Error404 />} />

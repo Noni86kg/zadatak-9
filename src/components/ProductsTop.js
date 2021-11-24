@@ -2,7 +2,7 @@ import React from 'react'
 import './ProductsTop.css'
 import Select from 'react-select'
 
-const ProductsTop = ({filterItems, ddlHandler, data, setData, filteredData, setFilteredData}) => {
+const ProductsTop = ({filterItems, ddlHandler, data}) => {
     const categories = [ "all","electronics","jewelery","men's clothing","women's clothing"]
 
     const options = [
