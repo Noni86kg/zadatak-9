@@ -76,12 +76,13 @@ function App() {
     }, [])
 
     const ddlHandler = (e) => {
+      let copiedData = [...data]
       if(e.value === "up") {
-        data.sort((a, b) => {
+        copiedData.sort((a, b) => {
           if (a.price > b.price) return 1
           if (a.price < b.price) return -1
         })
-        setData(data)
+        setData(copiedData)
         filteredData.sort((a, b) => {
           if (a.price > b.price) return 1
           if (a.price < b.price) return -1
@@ -89,11 +90,11 @@ function App() {
         setFilteredData(filteredData)
       }
       else if(e.value === "down") {
-        data.sort((a, b) => {
+        copiedData.sort((a, b) => {
           if (a.price > b.price) return -1
           if (a.price < b.price) return 1
         })
-        setData(data)
+        setData(copiedData)
         filteredData.sort((a, b) => {
           if (a.price > b.price) return -1
           if (a.price < b.price) return 1
